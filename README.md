@@ -15,7 +15,10 @@
 ## 1.1 准备环境  
 > * OS环境：华为云主机CentOS7.6
 > * 软件环境：  
->> * * 1)
+>> * 1) Python3.5.1  
+>> * 2) jieba、pyltp3.4.0、gensim、  
+>> * 2) jieba、pyltp3.4.0、gensim、
+
 ## 1.2 各部分代码详解  
 
 ## 1.3 运行方法  
@@ -58,5 +61,5 @@
 ├── review_content.py  
 └── stopwords.txt  
 
-
-# 3 update  
+# 3 效果展示  
+# 4 update  
