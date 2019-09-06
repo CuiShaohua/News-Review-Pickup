@@ -62,8 +62,8 @@
 └── stopwords.txt  
 
 # 3 效果展示  
-*Home Page*  
+_Home Page_  
 ![HomePage](https://github.com/CuiShaohua/project1/blob/master/Home.PNG)  
-*review content extraction*  
+_review content extraction_  
 ![review content extraction](https://github.com/CuiShaohua/project1/blob/master/review_content.PNG)  
 # 4 update  
