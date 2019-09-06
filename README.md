@@ -20,4 +20,41 @@
 
 # 2 目录结构  
 
+.
+├── app  
+│   ├── forms.py  
+│   ├── forms.py.bak  
+│   ├── __init__.py  
+│   ├── review_content.py  
+│   ├── routes.py  
+│   ├── static  
+│   │   └── images  
+│   │       ├── \345\257\271\350\257\235\346\203\205\347\273\252\350\257\206\345\210\253.PNG  
+│   │       ├── \346\203\205\346\204\237\345\200\276\345\220\221\345\210\206\346\236\220.PNG  
+│   │       ├── \346\226\207\347\253\240\345\210\206\347\261\273.PNG  
+│   │       ├── \346\226\207\347\253\240\346\240\207\347\255\276\347\256\241\347\220\206.PNG  
+│   │       ├── \346\226\260\351\227\273\346\221\230\350\246\201.PNG  
+│   │       ├── \350\207\252\344\270\273\347\272\240\351\224\231.PNG  
+│   │       └── \350\257\204\350\256\272\350\247\202\347\202\271\346\217\220\345\217\226.PNG  
+│   └── templates  
+│       ├── base.html  
+│       ├── form.html  
+│       ├── index.html  
+│       └── review_extraction.html  
+├── config.py  
+├── cws.model  
+├── md5.txt  
+├── merge_corpus  
+├── merge_corpus.model  
+├── merge_corpus.model.trainables.syn1neg.npy  
+├── merge_corpus.model.wv.vectors.npy  
+├── myproject.py  
+├── ner.model  
+├── parser.model  
+├── pisrl.model  
+├── pos.model  
+├── review_content.py  
+└── stopwords.txt  
+
+
 # 3 update  
