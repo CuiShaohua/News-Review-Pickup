@@ -15,11 +15,24 @@
 > * 软件环境：  
 >> * 1) Python3.5.1  
 >> * 2) jieba、pyltp3.4.0、gensim、  
->> * 2) jieba、pyltp3.4.0、gensim、
+>> * 3) flask、Bootstrap、html
 
 ## 1.2 各部分代码详解  
 
 ## 1.3 运行方法  
+> * 1 flask文件夹下，指定app：  
+```Shell  
+export FLASK_APP=myproject.py  
+```
+> * 2 flask文件夹下，运行：  
+```Shell  
+nohup firefox &  
+```  
+> * 3 flask文件夹下，运行：  
+```Shell  
+flask run  
+```
+> * 4 firefox浏览器运行<127.0.0.1:5000>  
 
 # 2 目录结构  
 .
@@ -64,3 +77,6 @@
 **review content extraction**  
 ![review content extraction](https://github.com/CuiShaohua/project1/blob/master/review_content.PNG)  
 # 4 update  
+（1）指代消解的算法还需要再写入初级目标；  
+（2）Tfidf在判断文档相似性上还需要细心考虑一些权重。  
+（3）正负面评价分析目前需要参考硕博论文再定思路。
