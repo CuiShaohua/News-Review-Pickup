@@ -23,6 +23,7 @@ git lfs track "relative path"
 ```Shell  
 git add .  
 ```  
+> * 如果要添加单个文件或者层级目标文件，需要指定目标文件的层级目录，相对路径即可。  
 ## 5 git commit -m "description of this commit"  
 > * 加入本地缓存
 ```Shell  
