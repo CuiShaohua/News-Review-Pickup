@@ -297,6 +297,121 @@ if __name__ == "__main__":
 
     print(main)
 ```  
+* 两个html部分
+> * index.html  
+```html
+{% extends "bootstrap/base.html" %}
+{% block title %}Zh_Cola Lab{% endblock %}
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle"
+            data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Flasky</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/Review_Extraction">Review Extraction</a></li>
+                <li><a href="/">NEWs Push</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<style>
+    .h1{
+        margin:20px;
+    }
+    .div1{
+        margin:10px;
+    }
+</style>
+<div>
+        <h1 class=div1 style="margin:10" ><b>Welcome to our Lab!</b><br/></h1>
+        <h1 class=div1 style="color:#123456;margin:10"> Members </h1>
+        <p class=h1 style="font-size:20px;margin:20">袁  禾  王路宁 范倩文  崔少华 </p>
+
+        <h1 class=div1 style="color:#456123;margin:10"> Fuctions </h1>
+        <a class=h1 href='Review_Extraction' style="font-size:20px;margin:10"> Review Extraction <br/></a>
+        <a class=h1 href='/' style="font-size:20px"> News Push </a>
+
+        <h1 class=div1 style="color:#123456 "> what can N-L-P do ? </h1>
+        <img class=div1 src="{{ url_for('static', filename='images/对话情绪识别.PNG') }}" width="300" height="300" alt="test"/>
+        <img src="{{ url_for('static', filename='images/评论观点提取.PNG') }}" width="300" height="300" alt="test"/>
+        <img src="{{ url_for('static', filename='images/文章分类.PNG') }}" width="300" height="300" alt="test"/>
+        <img src="{{ url_for('static', filename='images/文章标签管理.PNG') }}" width="300" height="300" alt="test"/>
+        <img src="{{ url_for('static', filename='images/新闻摘要.PNG') }}" width="300" height="300" alt="test"/>
+        <img src="{{ url_for('static', filename='images/自主纠错.PNG') }}" width="300" height="300" alt="test"/>
+
+</div>
+{% endblock %}
+```
+> * review_extraction.html  
+```html
+{% extends "bootstrap/base.html" %}
+{% block title %}Zh_Cola_Lab{% endblock %}
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle"
+            data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">{{ title }}</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/Review_Extraction">Review_Extraction</a></li>
+                <li><a href="/News_push">NEWs Push</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div style="width:100%;text-align:center">
+    <form action="" method="post">
+        <!-- #用来实现在配置中激活的csrf保护-->
+
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.name.label }}<br>
+            {{ form.name(size=100) }}
+        </p>
+
+        <p>{{ form.submit() }}</p>
+
+    </form>
+</div>
+
+<div class="container">
+
+        <h1>The result of review_Extraction is<br/></h1>
+        <table border="0">
+        {% for table in tables %}
+        <table border="0">
+
+            {{titles[loop.index]}}
+            {{ table|safe }}
+
+        </table>
+        {% endfor %}
+        </table>
+</div>
+
+{% endblock %}
+```
 ## 1.3 运行方法  
 > * 1 flask文件夹下，指定app：  
 ```Shell  
