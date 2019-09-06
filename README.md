@@ -39,7 +39,7 @@
 >> * 1) Python3.5.1  
 >> * 2) jieba、pyltp3.4.0、gensim、  
 >> * 3) flask、Bootstrap、html
-
+> * 语料库：wiki中文版和8W新闻稿-已经合成merge_corpus
 ## 1.2 运行方法  
 > * 1 flask文件夹下，指定app：  
 ```Shell  
@@ -482,7 +482,7 @@ if __name__ == "__main__":
 {% endblock %}
 ```
 ## 3.2 推荐TOP5新闻-待更新
-## 3.3 正负面分析评-价待更新
+## 3.3 正负面分析评价-待更新
 # 4 update  
 （1）指代消解的算法还需要再写入初级目标；  
 （2）Tfidf在判断文档相似性上还需要细心考虑一些权重。  
