@@ -99,7 +99,7 @@ flask run
 ![review content extraction](https://github.com/CuiShaohua/project1/blob/master/review_content.PNG)  
 # 3 代码详解
 
-## 1.2 各部分代码详解  
+## 3.1 新闻人物说话内容提取-代码详解  
 * Flask部分  
 ```Python  
 #从app模块中即从__init__.py中导入创建的app应用
@@ -481,7 +481,8 @@ if __name__ == "__main__":
 
 {% endblock %}
 ```
-
+## 3.2 推荐TOP5新闻-待更新
+## 3.3 正负面分析评-价待更新
 # 4 update  
 （1）指代消解的算法还需要再写入初级目标；  
 （2）Tfidf在判断文档相似性上还需要细心考虑一些权重。  
