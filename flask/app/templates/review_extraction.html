@@ -1,0 +1,55 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Zh_Cola_Lab{% endblock %}
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle"
+            data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">{{ title }}</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/Review_Extraction">Review_Extraction</a></li>
+                <li><a href="/News_push">NEWs Push</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div style="width:100%;text-align:center">    
+    <form action="" method="post">
+        <!-- #用来实现在配置中激活的csrf保护-->
+
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.name.label }}<br>
+            {{ form.name(size=100) }}
+        </p>
+
+        <p>{{ form.submit() }}</p>
+
+    </form>
+</div>
+
+<div class="container">
+
+        <h1>The result of review_Extraction is<br/></h1>
+        <table border="0"> 
+        {% for table in tables %}
+        <table border="0"> 
+
+            {{titles[loop.index]}}
+            {{ table|safe }}
+        
+        </table>
+        {% endfor %}
+        </table>
+</div>
+
+{% endblock %}

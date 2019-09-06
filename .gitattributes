@@ -1,0 +1,2 @@
+flask/*.model filter=lfs diff=lfs merge=lfs -text
+flask/merge_corpus* filter=lfs diff=lfs merge=lfs -text
