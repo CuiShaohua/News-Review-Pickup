@@ -474,13 +474,12 @@ if __name__ == "__main__":
             {{titles[loop.index]}}
             {{ table|safe }}
 
-        </table>
-        {% endfor %}
-        </table>
-</div>
+ `
 
-{% endblock %}
-```
+______
+             * 更新：添加指代消歧
+![效果](https://raw.githubusercontent.com/CuiShaohua/News-Review-Pickup/master/pro1.png)
+![效果](https://raw.githubusercontent.com/CuiShaohua/News-Review-Pickup/master/pro1_1.png)
 ## 3.2 推荐TOP5新闻-待更新
 
 
