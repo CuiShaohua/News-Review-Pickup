@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>多人聊天</title>
+</head>
+<body>
+<p>
+    您的昵称：
+    <input type="text" id="name"> {# 发送者名字 #}
+    <button onclick="openws()">进入聊天室</button>
+</p>
+<p>
+    给<input type="text" id="to_user"> {#  to_user 接收者#}
+    <input type="text" id="message">
+    <button onclick="send_msg()">点击发送</button>
+</p>
+<div id="msg_list" style="width: 500px;">
+
+</div>
+
+
+<script type="application/javascript">
+    var ws = null;
+
+    function openws() {
+        var name = document.getElementById("name").value;
+        ws = new WebSocket("ws://127.0.0.1:8000/ws/" + name); // 指定发送的链接地址
+        // 前端接收消息   ws_info 接收数据的容器
+        ws.onmessage = function (ws_info) {
+            console.log(ws_info.data);  //后端返回的响应数据，存放在ws_info下的data中 ,此时返回的时byts类型的数据
+            var msg_obj = JSON.parse(ws_info.data);  // 将数据转化成字符串类型
+            console.log(msg_obj) ;
+            var ptag = document.createElement("p");  //创建一个p标签
+            ptag.innerText = msg_obj.from_user + ":" + msg_obj.msg;//将data中的数据存放标签中
+            document.getElementById("msg_list").appendChild(ptag)
+        };
+    }
+
+    function send_msg() {
+        var msg = document.getElementById("message").value;
+        var from_user = document.getElementById("name").value;
+        var to_user = document.getElementById("to_user").value;
+        var ptag = document.createElement("p");  //创建一个p标签
+        ptag.style.cssText = "text-align: right;background-color: red; font-size:15px;";
+        ptag.innerText = msg + ":" + from_user;//将data中的数据存放标签中
+        document.getElementById("msg_list").appendChild(ptag);
+        var msg_obj = {
+            msg: msg,
+            from_user: from_user,
+            to_user: to_user,
+        };
+        ws.send(JSON.stringify(msg_obj));  // 拿到前端输入的内容，向后端发送
+    }
+</script>
+</body>
+</html>

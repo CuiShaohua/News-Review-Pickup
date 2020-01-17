@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网站信息点击</title>
+</head>
+<body>
+    <h1>网站的PVUV数据</h1>
+    <div>
+        <table border="1px">
+            <tr style="backgroud-color: #ee0000">
+                <th>日期</th>
+                <th>PV</th>
+                <th>UV</th>
+
+            </tr>
+            {% for row in data %}
+                <tr>
+                    <td>{{row[0]}} </td>
+                    <td>{{row[1]}} </td>
+                    <td>{{row[2]}} </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

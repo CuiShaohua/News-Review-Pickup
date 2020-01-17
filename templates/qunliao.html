@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>群聊</title>
+</head>
+<body>
+<p>
+    <input type="text" id="content">
+    <button onclick="send_msg()">发送</button> <!--给按钮绑定点击事件-->
+</p>
+
+<div id="chat_list">
+
+</div>
+</body>
+<script type="application/javascript">
+  var ws = new WebSocket("ws://10.128.83.187:9527/my_socket");
+  // 监听后端发来的消息,ws.onmessage起到监听的作用,只要有消息过来函数会自动执行
+  ws.onmessage = function (eventMessage) {
+      console.log(eventMessage.data); // 获取后端发来的消息
+      var p = document.createElement("p");
+      p.innerText = eventMessage.data;
+      document.getElementById("chat_list").appendChild(p); // 将消息内容添加到div内
+  };
+  // 将我们输入的内容发送给后端
+  function send_msg() {
+      var content = document.getElementById("content").value;
+      ws.send(content);
+  };
+
+</script>
+</html>

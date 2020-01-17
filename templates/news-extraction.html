@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Appra AI Lab </title>`
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="stylesheet" href="../static/layui/css/layui.css" media="all">
+<script src="../static/css/hm.js.下载"></script></head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo">AI learning Platform</div>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item"><a href="https://www.baidu.com">实验室介绍</a></li>
+      <li class="layui-nav-item"><a href="https://www.baidu.com">控制台</a></li>
+      <li class="layui-nav-item"><a href="https://www.baidu.com">项目教学</a></li>
+      <li class="layui-nav-item"><a href="https://obs-zhwiki.obs.myhuaweicloud.com:443/CV/%E5%B4%94%E5%B0%91%E5%8D%8E-%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D%EF%BC%88%E8%BD%AC%E5%B2%97%E4%B8%93%E7%94%A8%EF%BC%89.pdf?AccessKeyId=SE2BXPJGXQSJDCMH6ZRO&Expires=1581219988&Signature=YL3/h5pzxG9R3CQY7JtjSSQPfRc%3D">个人简介</a></li>
+    <span class="layui-nav-bar" style="left: 20px; top: 55px; width: 0px; opacity: 0;"></span></ul>
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <img src="../static/css/host.jpg" class="layui-nav-img">
+          Appra Cui
+        <span class="layui-nav-more"></span></a>
+        <dl class="layui-nav-child layui-anim layui-anim-upbit">
+          <dd><a href="https://www.baidu.com">基本资料</a></dd>
+          <dd><a href="https://www.baidu.com">安全设置</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="https://www.baidu.com">Log Out</a></li>
+    <span class="layui-nav-bar" style="left: 20px; top: 55px; width: 0px; opacity: 0;"></span></ul>
+  </div>
+
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree" lay-filter="test">
+        <li class="layui-nav-item layui-nav-itemed">
+          <a class="" href="javascript:;">经手项目<span class="layui-nav-more"></span></a>
+          <dl class="layui-nav-child">
+            <dd><a href="http://121.36.49.77:5000/news-extraction">新闻人物言论提取</a></dd>
+            <dd><a href="http://121.36.49.77:5000/autoSummary">文本自动摘要</a></dd>
+            <dd><a href="http://www.baidu.com">大众点评评论多任务学习</a></dd>
+            <dd><a href="http://www.baidu.com">对话机器人</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">共享资源<span class="layui-nav-more"></span></a>
+          <dl class="layui-nav-child">
+            <dd><a href="https://www.baidu.com">论文集</a></dd>
+            <dd><a href="https://www.baidu.com">机器学习笔记</a></dd>
+            <dd><a href="https://www.baidu.com">tensorflow笔记</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item"><a href="https://www.baidu.com">知识图谱</a></li>
+        <li class="layui-nav-item"><a href="https://www.baidu.com">Kaggle竞赛</a></li>
+      <span class="layui-nav-bar" style="top: 22.5px; height: 0px; opacity: 0;"></span></ul>
+    </div>
+  </div>
+
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <div class="layui-collapse">
+        <div class="layui-colla-item">
+          <h2 class="layui-colla-title"><b>示例</b></h2>
+          <li class="layui-colla-content layui-show">
+            <b>示例1：</br>
+          <b>输入：</r>
+            党的十八大以来，习近平总书记一直牵挂着我们广大人民群众的身体健康和用药安全。他强调：“要始终把人民群众的身体健康放在首位。他指出，“要密切监测药品短缺情况，采取有效措施，解决好低价药、‘救命药’、‘孤儿药’以及儿童用药的供应问题。”</br>
+          </b>输出：</br></b>
+                    <table class="layui-table" lay-skin="line">
+                      <colgroup>
+                        <col width="150">
+                        <col width="200">
+                        <col>
+                        <col>
+                      </colgroup>
+                    <thead>
+                        <tr>
+                          <th>Index</th>
+                          <th>Person</th>
+                          <th>Speak</th>
+                          <th>Content</th>
+                        </tr>
+                    </thead>
+                      <tbody>
+                        <tr>
+                          <td> 1 </td>
+                          <td> 习近平 </td>
+                          <td> 强调 </td>
+                          <td>要始终把人民群众的身体健康放在首位 </td>
+                        </tr>
+                        <tr>
+                          <td> 2 </td>
+                          <td> 习近平 </td>
+                          <td> 指出 </td>
+                          <td> 要密切监测药品短缺情况，采取有效措施，解决好低价药、‘救命药’、‘孤儿药’以及儿童用药的供应问题 </td>
+                        </tr>
+                      </tbody>
+                    </table>
+          </li>
+        </div>
+
+        <div class="layui-colla-item">
+          <h2 class="layui-colla-title"><b>动手操作</b></h2>
+          <div class="layui-colla-content layui-show">
+            <!--添加表单1-->
+            <form  name="myForm" class="layui-form" action=" " method="POST" > <!--target="nm_iframe"-->
+              {{ form.hidden_tag() }}
+              <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">输入文本</label>
+                <div class="layui-input-block">
+
+                  <textarea name="desc" placeholder="请输入新闻言论" class="layui-textarea" id="124" autocomplete="off" >{{user_input}}</textarea>
+
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-input-block">
+                  <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                  <button type="reset"  class="layui-btn layui-btn-primary" >重置</button>
+                </div>
+              </div>
+
+              <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">提取言论</label>
+                <div class="layui-input-block">
+
+                    <table class="layui-table" lay-skin="line">
+                      <colgroup>
+                        <col width="120">
+                        <col width="160">
+                        <col>
+                        <col>
+                      </colgroup>
+                    <thead>
+                        <tr>
+                          <th>Index</th>
+                          <th>Person</th>
+                          <th>Speak</th>
+                          <th>Content</th>
+                        </tr>
+                    </thead>
+                      <tbody>
+                        {% for row in text %}
+                        <tr>
+                          <td> {{row[0]}}</td>
+                          <td> {{row[1][0]}} </td>
+                          <td> {{row[2][0]}} </td>
+                          <td> {{row[3][0]}} </td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+
+                    </table>
+
+                </div>
+              </div>
+
+            </form>
+          <script src="../static/css/layui.js">
+            //Demo
+            layui.use('form', function(){
+
+              var form = layui.form;
+              form.render();          //刷新全部
+
+              //监听提交
+              form.on('submit(formDemo)', function(data){
+                layer.msg(JSON.stringify(data.field));
+              return true;
+              });
+            });
+            //弹窗
+            layui.use('layer', function(){
+
+                var layer = layui.layer;
+                console.log(layer)
+                var someJavaScriptVar = '{{ text }}';
+                if (someJavaScript==""){
+	            alert("注意！该句子不含有新闻人物言论");
+		    layer.msg('有表情地提示', {icon: 6});	
+		} else {
+		alert("注意该句子不含有新闻人物言论")
+		}
+		
+              });
+          </script>
+
+          </div>
+        </div>
+        <div class="layui-colla-item">
+          <h2 class="layui-colla-title"><b>其他功能</b></h2>
+          <div class="layui-colla-content layui-show">
+            <p class="layui-content"> Word CLoud </p>
+          </div>
+        </div>
+      </div>
+
+      <script src="../static/css/layui.js">
+      //注意：折叠面板 依赖 element 模块，否则无法进行功能性操作
+      layui.use('element', function(){
+        var element = layui.element;
+
+        //…
+      });
+      </script>
+
+  </div>
+
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    <b>版权所有 © Appra AI Lab 2020 保留一切权利</b>
+  </div>
+</div>
+<script src="../static/layui.js.下载" charset="utf-8"></script>
+<script>
+//JavaScript代码区域
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</body></html>
