@@ -481,7 +481,7 @@ ______
 * 更新：添加指代消歧
 ![举例](https://raw.githubusercontent.com/CuiShaohua/News-Review-Pickup/master/pro1.png)
 ![指代消歧效果](https://raw.githubusercontent.com/CuiShaohua/News-Review-Pickup/master/pro1_1.png)
-指代消歧本身是一项复杂的过程，当前深度学习算法中也有Coref任务在持续进行，研究学者也开发了不少模型进行计算，比较有代表性的是阿里云的模型，大家可从网上找下相关论文看下。数据集也是公开的，本文暂使用的是基于规则来写，具体参考的算法是[指代消歧的研究方法]()一文，项目中的关键代码展示在下方：  
+指代消歧本身是一项复杂的过程，当前深度学习算法中也有Coref任务在持续进行，研究学者也开发了不少模型进行计算，比较有代表性的是阿里云的模型，大家可从网上找下相关论文看下。数据集也是公开的，本文暂使用的是基于规则来写，具体参考的算法是[指代消歧的研究方法](https://github.com/CuiShaohua/News-Review-Pickup/blob/master/%E6%B1%89%E8%AF%AD%E8%AF%AD%E7%AF%87%E4%B8%AD%E4%BA%BA%E7%A7%B0%E6%8C%87%E4%BB%A3%E6%B6%88%E6%AD%A7%E7%A0%94%E7%A9%B6.pdf)一文，项目中的关键代码展示在下方：  
 ```Python
  # focus_point_set
 class Si:
