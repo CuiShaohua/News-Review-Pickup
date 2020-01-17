@@ -481,6 +481,71 @@ ______
 * 更新：添加指代消歧
 ![举例](https://raw.githubusercontent.com/CuiShaohua/News-Review-Pickup/master/pro1.png)
 ![指代消歧效果](https://raw.githubusercontent.com/CuiShaohua/News-Review-Pickup/master/pro1_1.png)
+指代消歧本身是一项复杂的过程，当前深度学习算法中也有Coref任务在持续进行，研究学者也开发了不少模型进行计算，比较有代表性的是阿里云的模型，大家可从网上找下相关论文看下。数据集也是公开的，本文暂使用的是基于规则来写，具体参考的算法是[指代消歧的研究方法]()一文，项目中的关键代码展示在下方：  
+```Python
+ # focus_point_set
+class Si:
+
+    def __init__(self, words, postags, old_SI = {}):
+
+        self.words = words # 名词及索引
+
+        self.postags = postags # 主语、宾语、辅助名词及索引
+        self.params = {}  # {'word':'score'}
+        self.old_SI = old_SI
+
+    def score(self):
+        # 根据名词和索引及主宾辅的索引情况进行归类并且赋值初始分数
+        weight_adment = []
+        for i,j in self.postags.items():
+            # i代表["SBV",'VOB'],j代表索引
+            # 加入一个权重的修正，将名词词组的得分提高，如score(习近平) = score(总书记)
+
+            if i=='SBV':
+                for k in j:
+                    if k[0] in self.words.keys() and self.words[k[0]] == k[1]:
+                        self.params[k[0]] = 5
+                        weight_adment.append(k[1])
+                    else:
+                        pass
+            elif i=='VOB':
+                for m in j:
+                    if m[0] in self.words.keys() and self.words[m[0]] == m[1]:
+                        self.params[m[0]] = 2
+                    else:
+                        pass
+            else:
+                self.params[i] = 1# "SBV":(词，初始分数)
+
+        for word, index in self.words.items():
+            if word not in self.params.keys():
+                self.params[word] = 1
+        # 修正
+        #print(weight_adment)
+        for f, k in self.words.items():
+            if k in (np.array(weight_adment) + 1).tolist() or k in (np.array(weight_adment) - 1).tolist():
+                self.params[f] = 5
+
+        return self.params
+
+
+    def update(self):
+        # 先调用一次score，获得当前的params
+        params = self.score()
+        # 比较当前postags和之前的postags
+        if self.old_SI:
+            for i, j in self.old_SI.params.items():
+                if i not in list(params.keys()) and j>=1:
+                    j -= 1  # 进行简化，衰减程度都变成1
+                    self.old_SI.params[i] = j
+
+                if j <= 0:
+                    self.old_SI.params[i] = 0
+        #print('update', self.old_SI.params)
+        return self.old_SI.params
+```
+
+
 ## 3.2 推荐TOP5新闻-待更新
 
 
